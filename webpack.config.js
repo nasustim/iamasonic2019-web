@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
 
 const mode = "development";
 const enabledSourceMap = mode === "development"
@@ -63,5 +64,9 @@ module.exports = {
       '.scss',
       '.css'
     ]
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'docs'),
+    port: 8000
   }
 }
