@@ -1,4 +1,5 @@
 import './index.scss'
+const backgroundImg = require('./res/header_back.jpg')
 
 const headerCanvas: HTMLCanvasElement = document.querySelector('#header-image')
 let headerCtx: CanvasRenderingContext2D
@@ -76,11 +77,11 @@ window.addEventListener('resize', function (event) {
   }
   resizeTimer = setTimeout(() => {
     headerCtx = initCanvas(headerCanvas)
-    appendBackImgToCanvas(headerCtx, './res/header_back.jpg')
+    appendBackImgToCanvas(headerCtx, backgroundImg)
   }, 200)
 })
 
 
 // exec
 headerCtx = initCanvas(headerCanvas)
-appendBackImgToCanvas(headerCtx, './res/header_back.jpg')
+appendBackImgToCanvas(headerCtx, backgroundImg)
