@@ -1,6 +1,10 @@
 <!DOCTYPE html>
+
+<% const playersData = ['aa', 'ii'] %>
+
 <html lang="ja">
 <head>
+  <meta name="robots" content="noindex, nofollow">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>iamasonic 2019</title>
@@ -10,9 +14,13 @@
     <header>
       <canvas id="header-image"></canvas>
     </header>
-    <section>
-
-    </section>
+    <main>
+      <section>
+        <% for(let player in playersData){ %>
+          <%- include('./components/player.ejs', {id: player}) %>
+        <% } %>
+      </section>
+    </main>
     <footer>
 
     </footer>
