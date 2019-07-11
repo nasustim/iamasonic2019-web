@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<% const playersData = ['aa', 'ii'] %>
+<% const playersData = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'] %>
 
 <html lang="ja">
 <head>
@@ -17,14 +17,26 @@
     </header>
     <main>
       <section>
-        <% for(let player in playersData){ %>
-          <%- include('./components/player.ejs', {id: player}) %>
-        <% } %>
+        <h2 class="easing-block1 sub-title">イベント詳細</h2>
+        <div class="easing-block1" id="event">
+          aaa
+        </div>
+      </section>
+      <section>
+        <h2 class="easing-block2 sub-title">演者</h2>
+        <div class="easing-block2" id="players">
+          <% for(let i in playersData){ %>
+            <%- include('./components/player.ejs', {id: playersData[i], key: i}) %>
+          <% } %>
+        </div>
       </section>
     </main>
-    <footer>
-
+    <footer class="easing-block5">
+      <p>いあまそ</p>
     </footer>
   </div>
+  <% for(let i in playersData){ %>
+    <%- include('./components/modal.ejs', {id: playersData[i], key: i}) %>
+  <% } %>
 </body>
 </html>

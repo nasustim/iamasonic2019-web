@@ -1,5 +1,18 @@
 import './index.scss'
+
+require('./polyfill.js')
+import MicroModal from 'micromodal'
+
+import * as ScrollMagic from 'scrollmagic'
+import {TweenMax, TimelineMax, Power4} from 'gsap'
+import {ScrollMagicPluginGsap} from 'scrollmagic-plugin-gsap'
+ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax)
+
 const backgroundImg = require('./res/header_back.jpg')
+
+/**
+ * canvas
+ */
 
 const headerCanvas: HTMLCanvasElement = document.querySelector('#header-image')
 let headerCtx: CanvasRenderingContext2D
@@ -81,7 +94,51 @@ window.addEventListener('resize', function (event) {
   }, 200)
 })
 
-
 // exec
 headerCtx = initCanvas(headerCanvas)
 appendBackImgToCanvas(headerCtx, backgroundImg)
+
+/**
+ * easing animation
+ */
+
+const controller = new ScrollMagic.Controller()
+
+const tween1 = TweenMax.fromTo('.easing-block1', 2, {opacity: 0, x: -120}, {ease: Power4.easeOut, opacity: 1, x: 0})
+const scene1 = new ScrollMagic.Scene({
+  triggerElement: '.easing-block1',
+  triggerHook: 'onEnter',
+  offset : 200,
+  reverse: false
+})
+  .setTween(tween1)
+  .addTo(controller);
+
+
+const tween2 = TweenMax.fromTo('.easing-block2', 2, {opacity: 0, x: -120}, {ease: Power4.easeOut, opacity: 1, x: 0})
+const scene2 = new ScrollMagic.Scene({
+  triggerElement: '.easing-block2',
+  triggerHook: 'onEnter',
+  offset : 200,
+  reverse: false
+})
+  .setTween(tween2)
+  .addTo(controller);
+
+const tween5 = TweenMax.fromTo('.easing-block5', 2, {opacity: 0, x: -120}, {ease: Power4.easeOut, opacity: 1, x: 0})
+const scene5 = new ScrollMagic.Scene({
+  triggerElement: '.easing-block5',
+  triggerHook: 'onEnter',
+  offset : 0,
+  reverse: false
+})
+  .setTween(tween5)
+  .addTo(controller);
+
+// modal dialog
+
+MicroModal.init({
+  disableScroll: true,
+  disableFocus: true,
+  awaitCloseAnimation: true
+});
