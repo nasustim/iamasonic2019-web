@@ -96,29 +96,31 @@ section {
     display: flex;
     flex-direction: row;
     justify-content: left;
-    align-items: baseline;
-    flex-wrap: wrap;
+    //align-items: baseline;
+    // flex-wrap: wrap;
 
-    a{
+    .players-column{
 
-      &:hover {
-        .player-card > img {
-          filter: brightness(0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+
+      a{
+        &:hover {
+          .player-card > img {
+            filter: brightness(0.4);
+          }
         }
-      }
 
-      @media (max-width: $break-point) {
         margin: 10px;
         width: calc(100% - 20px);
-      }
-      @media (min-width: calc( #{$break-point} + 1px)) {
-        margin: 10px;
-        width: calc(33.3% - 20px);
-      }
-      .player-card{ 
-        img {
-          transition: filter 0.3s;
-          width: 100%;
+        
+        .player-card{ 
+          img {
+            transition: filter 0.3s;
+            width: 100%;
+          }
         }
       }
     }

@@ -25,9 +25,27 @@
       <section>
         <h2 class="easing-block2 sub-title">演者</h2>
         <div class="easing-block2" id="players">
-          <% for(let i in playersData){ %>
-            <%- include('./components/player.ejs', {id: playersData[i], key: i}) %>
-          <% } %>
+          <div class="players-column">
+            <% for(let i in playersData){ %>
+              <% if(i % 3 === 0){ %>
+                <%- include('./components/player.ejs', {id: playersData[i], key: i}) %>
+              <% } %>
+            <% } %>
+          </div>
+          <div class="players-column">
+            <% for(let i in playersData){ %>
+              <% if(i % 3 === 1){ %>
+                <%- include('./components/player.ejs', {id: playersData[i], key: i}) %>
+              <% } %>
+            <% } %>
+          </div>
+          <div class="players-column">
+            <% for(let i in playersData){ %>
+              <% if(i % 3 === 2){ %>
+                <%- include('./components/player.ejs', {id: playersData[i], key: i}) %>
+              <% } %>
+            <% } %>
+          </div>
         </div>
       </section>
     </main>
