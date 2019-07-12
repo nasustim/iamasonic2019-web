@@ -1,4 +1,5 @@
-$break-point: 840px;
+$break-point: 600px;
+$transition-time: 500ms;
 
 html, body, #container {
 
@@ -94,7 +95,12 @@ section {
 
   #players{
     display: flex;
-    flex-direction: row;
+    @media (max-width: $break-point) {
+      flex-direction: column;
+    }
+    @media (min-width: calc( #{$break-point} + 1 )) {
+      flex-direction: row;
+    }
     justify-content: left;
     //align-items: baseline;
     // flex-wrap: wrap;
@@ -126,14 +132,45 @@ section {
           .player-detail {
             background-color: gray;
             margin: 0;
-            padding: 12px;
-            display: none;
+
+            overflow: hidden;
 
             &[data-is-show="false"] {
-              display: none;
+
+              height: 0;
+
+              padding: 0 12px;
+
+              //display: none;
+              opacity: 0;
+
+              color: rgba($color: #000000, $alpha: 0);
+
+
+              -webkit-transition-property: padding height opacity /*display*/ color;
+              -webkit-transition-duration: $transition-time;
+              -webkit-transition-timing-function: ease-out;
+              transition-property: padding height opacity /*display*/ color;
+              transition-duration: $transition-time;
+              transition-timing-function: ease-out;
             }
             &[data-is-show="true"] {
-              display: block;
+
+              height: auto;
+
+              padding: 12px;
+
+              //display: block;
+              opacity: 1;
+
+              color: rgba($color: #000000, $alpha: 1);
+
+              -webkit-transition-property: padding height opacity /*display*/ color;
+              -webkit-transition-duration: $transition-time;
+              -webkit-transition-timing-function: ease-out;
+              transition-property: padding height opacity /*display*/ color;
+              transition-duration: $transition-time;
+              transition-timing-function: ease-out;
             }
             
           }
