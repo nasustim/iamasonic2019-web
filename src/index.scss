@@ -115,11 +115,27 @@ section {
 
         margin: 10px;
         width: calc(100% - 20px);
+
+        text-decoration: none;
         
         .player-card{ 
           img {
             transition: filter 0.3s;
             width: 100%;
+          }
+          .player-detail {
+            background-color: gray;
+            margin: 0;
+            padding: 12px;
+            display: none;
+
+            &[data-is-show="false"] {
+              display: none;
+            }
+            &[data-is-show="true"] {
+              display: block;
+            }
+            
           }
         }
       }

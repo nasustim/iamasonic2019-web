@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
-<% const playersData = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'] %>
+<%
+  const playersData = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+%>
 
 <html lang="ja">
 <head>
@@ -53,8 +55,5 @@
       <p>いあまそ</p>
     </footer>
   </div>
-  <% for(let i in playersData){ %>
-    <%- include('./components/modal.ejs', {id: playersData[i], key: i}) %>
-  <% } %>
 </body>
 </html>

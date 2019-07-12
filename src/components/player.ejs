@@ -1,5 +1,10 @@
-<a data-micromodal-trigger="modal-<%= key %>">
+<a class="player-detail-toggle" id="player-<%= id %>">
   <article class="player-card" id="card-<%= id %>">
     <img src="./res/img1.jpg">
+    <div class="player-detail" id="detail-player-<%= id %>" data-is-show="false">
+      <p>
+        <%= id %>
+      </p>
+    </div>
   </article>
 </a>

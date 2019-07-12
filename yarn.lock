@@ -21,11 +21,6 @@
   resolved "https://registry.yarnpkg.com/@types/gsap/-/gsap-1.20.2.tgz#038d0e81a8dd50b9b6894f34f3cd4045f71c62b8"
   integrity sha512-i9nUsnS32+VTgoX5IlaCYukJpCoB3c6h3bZvO67aIRdb3z8NFTWgeUDpQutLyb1ujowp6nw37qLQNvEowqq8yw==
 
-"@types/micromodal@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@types/micromodal/-/micromodal-0.3.0.tgz#19c624f03e98fbb4faf8b75d94cef199fd30f835"
-  integrity sha512-n8Qicw8bPWAFJjR8HICQhgUXmTUjDZf2Yt85N0LozuOMKEYEIRMwqvTCp1A5dd5ycE5piyvERQajyUDF8SGaOw==
-
 "@types/minimatch@*":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
@@ -35,11 +30,6 @@
   version "12.6.2"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.6.2.tgz#a5ccec6abb6060d5f20d256fb03ed743e9774999"
   integrity sha512-gojym4tX0FWeV2gsW4Xmzo5wxGjXGm550oVUII7f7G5o4BV6c7DBdiG1RRQd+y1bvqRyYtPfMK85UM95vsapqQ==
-
-"@types/vanilla-modal@^1.6.2":
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/@types/vanilla-modal/-/vanilla-modal-1.6.2.tgz#abc8863ee843278bc29ff958b87d2e756adfbb08"
-  integrity sha512-TfEaJqy3DHaIwwQiZOZphgxw1pKvTHS/hmM1/ZjwjK/66x55NOy1/nhKYHN+U9AsyAfvNZCk9XhYKCymhehCgA==
 
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
@@ -2986,11 +2976,6 @@ micromatch@^4.0.0:
     braces "^3.0.1"
     picomatch "^2.0.5"
 
-micromodal@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/micromodal/-/micromodal-0.4.0.tgz#924b80adff6654310070432ac51bb1d195eefb95"
-  integrity sha512-YDku9Fi57S4Sm6oitSy3sr786qSp5L6NbatuH2kEeXf0jStvZgZk4bLBKaoSONBaq3BEvFz3hAaoUa7/pV1Kgg==
-
 miller-rabin@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/miller-rabin/-/miller-rabin-4.0.1.tgz#f080351c865b0dc562a8462966daa53543c78a4d"
@@ -5113,11 +5098,6 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
-
-vanilla-modal@^1.6.5:
-  version "1.6.5"
-  resolved "https://registry.yarnpkg.com/vanilla-modal/-/vanilla-modal-1.6.5.tgz#44958dab9c606170923ec3dd7d22795581a0fdb1"
-  integrity sha512-QPCn1MTmtVrqy7KaUFymwReoO4x6gD0V25hq+tC8ASzGXfznLuytY9YnudxjLOBwsccYRh0hjdhtIwBN4iv7ag==
 
 vary@~1.1.2:
   version "1.1.2"

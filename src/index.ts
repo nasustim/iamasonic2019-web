@@ -1,8 +1,5 @@
 import './index.scss'
 
-require('./polyfill.js')
-import MicroModal from 'micromodal'
-
 import * as ScrollMagic from 'scrollmagic'
 import {TweenMax, TimelineMax, Power4} from 'gsap'
 import {ScrollMagicPluginGsap} from 'scrollmagic-plugin-gsap'
@@ -135,10 +132,18 @@ const scene5 = new ScrollMagic.Scene({
   .setTween(tween5)
   .addTo(controller);
 
-// modal dialog
+// player's detail
 
-MicroModal.init({
-  disableScroll: true,
-  disableFocus: true,
-  awaitCloseAnimation: true
-});
+let players = require('./data')
+  .map(
+    (v, i) => document.getElementById(`player-${v}`)
+  )
+  .map((v, i) => {
+    console.log(document.getElementById(`detail-${v.id}`))
+    return v.onclick = () => 
+      document.getElementById(`detail-${v.id}`).getAttribute('data-is-show') == 'true'
+        ? document.getElementById(`detail-${v.id}`).setAttribute('data-is-show', 'false')
+        : document.getElementById(`detail-${v.id}`).setAttribute('data-is-show', 'true')
+  })
+
+console.log(players)
