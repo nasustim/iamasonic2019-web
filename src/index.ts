@@ -49,7 +49,7 @@ function headerSizeCulculate (img: HTMLImageElement): any {
 
   let isExtImgHeight = deviceWidth * (imgHeight / deviceHeight) > imgWidth
 
-  console.log(isExtImgHeight)
+//  console.log(isExtImgHeight)
   let sx, sy, sw, sh, dx = 0, dy = 0, dw = deviceWidth, dh = deviceHeight
   // 画像の高さが余分な場合
   if( !isExtImgHeight ){
@@ -75,7 +75,7 @@ function headerSizeCulculate (img: HTMLImageElement): any {
 async function appendBackImgToCanvas (ctx: CanvasRenderingContext2D, imgPath: string): Promise<CanvasRenderingContext2D> {
   let img = await loadImg(imgPath)
   let size = headerSizeCulculate(img)
-  console.log(size)
+//  console.log(size)
   ctx.drawImage(img, size.sx, size.sy, size.sw, size.sh, size.dx, size.dy, size.dw, size.dh)
   return ctx
 }
@@ -138,12 +138,22 @@ let players = require('./data')
   .map(
     (v, i) => document.getElementById(`player-${v}`)
   )
-  .map((v, i) => {
-    console.log(document.getElementById(`detail-${v.id}`))
-    return v.onclick = () => 
-      document.getElementById(`detail-${v.id}`).getAttribute('data-is-show') == 'true'
-        ? document.getElementById(`detail-${v.id}`).setAttribute('data-is-show', 'false')
-        : document.getElementById(`detail-${v.id}`).setAttribute('data-is-show', 'true')
-  })
 
-console.log(players)
+for(let i in players)
+  players[i].onclick = () => {
+    document.getElementById(`detail-${players[i].id}`).getAttribute('data-is-show') == 'true'
+      ? (() => {
+        document.getElementById(`detail-${players[i].id}`).setAttribute('data-is-show', 'false')
+      })()
+      : (() => {
+        let details = document.getElementsByClassName('player-detail')
+        //console.log(details)
+        for(let i = 0; i < details.length; i++){
+          details[i].setAttribute('data-is-show', 'false')
+        }
+        document.getElementById(`detail-${players[i].id}`).setAttribute('data-is-show', 'true')
+      })()
+    }
+
+    
+
