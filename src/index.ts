@@ -99,6 +99,8 @@ appendBackImgToCanvas(headerCtx, backgroundImg)
  * easing animation
  */
 
+ // あとでArray.mapか何かにまとめる
+
 const controller = new ScrollMagic.Controller()
 
 const tween1 = TweenMax.fromTo('.easing-block1', 2, {opacity: 0, x: -120}, {ease: Power4.easeOut, opacity: 1, x: 0})
@@ -120,6 +122,26 @@ const scene2 = new ScrollMagic.Scene({
   reverse: false
 })
   .setTween(tween2)
+  .addTo(controller);
+
+const tween3 = TweenMax.fromTo('.easing-block3', 2, {opacity: 0, x: -120}, {ease: Power4.easeOut, opacity: 1, x: 0})
+const scene3 = new ScrollMagic.Scene({
+  triggerElement: '.easing-block3',
+  triggerHook: 'onEnter',
+  offset : 200,
+  reverse: false
+})
+  .setTween(tween3)
+  .addTo(controller);
+
+const tween4 = TweenMax.fromTo('.easing-block4', 2, {opacity: 0, x: -120}, {ease: Power4.easeOut, opacity: 1, x: 0})
+const scene4 = new ScrollMagic.Scene({
+  triggerElement: '.easing-block4',
+  triggerHook: 'onEnter',
+  offset : 50,
+  reverse: false
+})
+  .setTween(tween4)
   .addTo(controller);
 
 const tween5 = TweenMax.fromTo('.easing-block5', 2, {opacity: 0, x: -120}, {ease: Power4.easeOut, opacity: 1, x: 0})

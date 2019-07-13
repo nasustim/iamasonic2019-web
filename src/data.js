@@ -1,1 +1,1 @@
-module.exports = data = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+module.exports = playersData = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']

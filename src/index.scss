@@ -130,6 +130,10 @@ section {
           img {
             transition: filter 0.3s;
             width: 100%;
+
+            vertical-align:bottom;
+            box-sizing: border-box;
+            border: solid 0px #ffffff;
           }
           .player-detail {
             background-color: gray;

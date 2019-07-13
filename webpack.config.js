@@ -21,7 +21,7 @@ module.exports = {
       },
       {
         test: /\.ejs$/,
-        use: ['html-loader', 'ejs-html-loader']
+        use: ['html-loader', `ejs-html-loader`]
       },
       {
         test: /\.scss$/,
