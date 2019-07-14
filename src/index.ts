@@ -43,7 +43,6 @@ async function browserResizeForFooter (canvas: HTMLCanvasElement, imgPath: strin
   let imgHeight = img.height
 
   let deviceWidth = window.innerWidth
-  let deviceHeight = window.innerHeight
   let deviceToImgRatio = imgWidth / deviceWidth
   
   let width = imgWidth / deviceToImgRatio
@@ -62,39 +61,7 @@ async function loadImg (imgPath: string): Promise<HTMLImageElement | any> {
   })
 }
 
-function headerSizeCulculate (img: HTMLImageElement): any {
-  let deviceWidth = window.innerWidth 
-  let deviceHeight = window.innerHeight
-
-  let imgWidth = img.width
-  let imgHeight = img.height
-
-  let isExtImgHeight = deviceWidth * (imgHeight / deviceHeight) > imgWidth
-
-//  console.log(isExtImgHeight)
-  let sx, sy, sw, sh, dx = 0, dy = 0, dw = deviceWidth, dh = deviceHeight
-  // 画像の高さが余分な場合
-  if( !isExtImgHeight ){
-    sy = 0
-    sh = imgHeight
-
-    sw = deviceWidth * (imgHeight / deviceHeight)
-    sx = (imgWidth - sw) / 2
-
-  }else{
-    sx = 0
-    sw = imgWidth
-
-    sh = deviceHeight * (imgWidth / deviceWidth)
-    sy = (imgHeight - sh) / 2
-
-  }
-
-
-  return {sx, sy, sw, sh, dx, dy, dw, dh}
-}
-
-function footerSizeCulculate (img: HTMLImageElement, canvas:HTMLCanvasElement): any {
+function sizeCulculate (img: HTMLImageElement, canvas:HTMLCanvasElement): any {
   let canvasWidth = canvas.width
   let imgWidth = img.width
   let canvasHeight = canvas.height
@@ -103,40 +70,32 @@ function footerSizeCulculate (img: HTMLImageElement, canvas:HTMLCanvasElement): 
   return {sx: 0, sy: 0, sw: imgWidth, sh: imgHeight, dx: 0, dy: 0, dw: canvasWidth, dh: canvasHeight}
 }
 
-
-async function appendHeaderBackImgToCanvas (ctx: CanvasRenderingContext2D, imgPath: string): Promise<CanvasRenderingContext2D> {
+async function appendBackImgToCanvas (ctx: CanvasRenderingContext2D, imgPath: string, canvas: HTMLCanvasElement): Promise<CanvasRenderingContext2D> {
   let img = await loadImg(imgPath)
-  let size = headerSizeCulculate(img)
-//  console.log(size)
-  ctx.drawImage(img, size.sx, size.sy, size.sw, size.sh, size.dx, size.dy, size.dw, size.dh)
-  return ctx
-}
-async function appendFooterBackImgToCanvas (ctx: CanvasRenderingContext2D, imgPath: string, canvas: HTMLCanvasElement): Promise<CanvasRenderingContext2D> {
-  let img = await loadImg(imgPath)
-  let size = footerSizeCulculate(img, canvas)
+  let size = sizeCulculate(img, canvas)
   console.log(size)
   ctx.drawImage(img, size.sx, size.sy, size.sw, size.sh, size.dx, size.dy, size.dw, size.dh)
   return ctx
 }
 
-let resizeTimer
+/*let resizeTimer
 window.addEventListener('resize', function (event) {
   if (resizeTimer != null) {
     clearTimeout(resizeTimer);
   }
   resizeTimer = setTimeout(() => {
     headerCtx = initCanvasForHeader(headerCanvas)
-    appendHeaderBackImgToCanvas(headerCtx, headerBackgroundImg)
+    appendBackImgToCanvas(headerCtx, headerBackgroundImg, headerCanvas)
     footerCtx = initCanvasForFooter(footerCanvas, footerBackgroundImg)
-    appendFooterBackImgToCanvas(footerCtx, footerBackgroundImg, footerCanvas)
+    appendBackImgToCanvas(footerCtx, footerBackgroundImg, footerCanvas)
   }, 200)
-})
+})*/
 
 // exec
 headerCtx = initCanvasForHeader(headerCanvas)
-appendHeaderBackImgToCanvas(headerCtx, headerBackgroundImg)
+appendBackImgToCanvas(headerCtx, headerBackgroundImg, headerCanvas)
 footerCtx = initCanvasForFooter(footerCanvas, footerBackgroundImg)
-appendFooterBackImgToCanvas(footerCtx, footerBackgroundImg, footerCanvas)
+appendBackImgToCanvas(footerCtx, footerBackgroundImg, footerCanvas)
 
 /**
  * easing animation
