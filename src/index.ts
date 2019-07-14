@@ -67,7 +67,10 @@ async function loadImg (imgPath: string): Promise<HTMLImageElement | any> {
     let img = new Image()
     img.src = imgPath
     img.onload = () => resolve(img)
-    img.onerror = e => reject(e)
+    img.onerror = e => {
+      console.error(e)
+      reject(e)
+    }
   })
 }
 
@@ -83,7 +86,7 @@ function sizeCulculate (img: HTMLImageElement, canvas:HTMLCanvasElement): any {
 async function appendBackImgToCanvas (ctx: CanvasRenderingContext2D, imgPath: string, canvas: HTMLCanvasElement): Promise<CanvasRenderingContext2D> {
   let img = await loadImg(imgPath)
   let size = sizeCulculate(img, canvas)
-  console.log(size)
+  //console.log(size)
   ctx.drawImage(img, size.sx, size.sy, size.sw, size.sh, size.dx, size.dy, size.dw, size.dh)
   return ctx
 }
@@ -98,16 +101,11 @@ window.addEventListener('resize', function (event) {
     GLOBAL_HEIGHT = window.innerHeight
     headerCtx = initCanvasForHeader(headerCanvas)
     appendBackImgToCanvas(headerCtx, headerBackgroundImg, headerCanvas)
-    footerCtx = initCanvasForFooter(footerCanvas, footerBackgroundImg)
-    appendBackImgToCanvas(footerCtx, footerBackgroundImg, footerCanvas)
+    setFooter()
+    //footerCtx = initCanvasForFooter(footerCanvas, footerBackgroundImg)
+    //appendBackImgToCanvas(footerCtx, footerBackgroundImg, footerCanvas)
   }, 120)
 })
-
-// exec
-headerCtx = initCanvasForHeader(headerCanvas)
-appendBackImgToCanvas(headerCtx, headerBackgroundImg, headerCanvas)
-footerCtx = initCanvasForFooter(footerCanvas, footerBackgroundImg)
-appendBackImgToCanvas(footerCtx, footerBackgroundImg, footerCanvas)
 
 /**
  * easing animation
@@ -160,7 +158,7 @@ const scene4 = new ScrollMagic.Scene({
 
 const tweenTitle = TweenMax.fromTo('#header-logo', 2, {width: '90vw'}, {ease: Power4.easeOut, width: GLOBAL_WIDTH > threshold ? '50vw' : '70vw'})
 const sceneTitle = new ScrollMagic.Scene({
-  triggerElement: '#header-logo',
+  triggerElement: 'header',
   triggerHook: 'onLeave',
   offset : 1,
   reverse: false
@@ -201,5 +199,24 @@ for(let i in players)
       })()
     }
 
-    
 
+// exec canvas
+headerCtx = initCanvasForHeader(headerCanvas)
+appendBackImgToCanvas(headerCtx, headerBackgroundImg, headerCanvas)
+//footerCtx = initCanvasForFooter(footerCanvas, footerBackgroundImg)
+//appendBackImgToCanvas(footerCtx, footerBackgroundImg, footerCanvas)
+const setFooter = () =>{
+  let footer = document.querySelector('footer')
+  let footerBack = document.getElementById('footer-image')
+  let footerImg = new Image()
+  footerImg.src = footerBackgroundImg
+  footerImg.onload = () => {
+
+    footer.setAttribute('style', `height: ${(GLOBAL_WIDTH / footerImg.width) * footerImg.height}px; width: 100vw;margin: 50px 0 0 0;padding: 0;position: relative;`)
+    footerBack.setAttribute('style', `height: ${(GLOBAL_WIDTH / footerImg.width) * footerImg.height}px; background-image: url('res/footer_back.png'); background-size: contain; width: 100vw;position: absolute;left: 0;top: 0;`)
+  }
+  footerImg.onerror = (e) => {
+    console.error (e)
+  }
+}
+setFooter()
