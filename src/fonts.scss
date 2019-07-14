@@ -1,0 +1,20 @@
+$font-path: "./fonts/PixelMplus12";
+
+@font-face {
+  font-family: 'PixelMplus12';
+  src: url('#{$font-path}-Regular.eot'),                                
+       url('#{$font-path}-Regular.eot?iefix') format('embedded-opentype'), 
+       url('#{$font-path}-Regular.woff') format('woff'),  
+       url('#{$font-path}-Regular.woff2') format('woff2'),            
+       url('#{$font-path}-Regular.ttf') format('truetype'); 
+  font-weight: normal;         
+}
+@font-face {
+  font-family: 'PixelMplus12';
+  src: url('#{$font-path}-Bold.eot'),                                
+       url('#{$font-path}-Bold.eot?iefix') format('embedded-opentype'), 
+       url('#{$font-path}-Bold.woff') format('woff'),  
+       url('#{$font-path}-Bold.woff2') format('woff2'),            
+       url('#{$font-path}-Bold.ttf') format('truetype'); 
+  font-weight: bold;         
+}

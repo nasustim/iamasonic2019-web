@@ -1,17 +1,20 @@
+@import './fonts.scss';
+
 $break-point: 600px;
 $transition-time: 500ms;
 
-$sans-serif: -apple-system,BlinkMacSystemFont,"Helvetica Neue","游ゴシック Medium",YuGothic,YuGothicM,"Hiragino Kaku Gothic ProN",メイリオ,Meiryo,sans-serif;
 
+$title: PixelMplus12;
+$sentence: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック Medium", YuGothic, YuGothicM, "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif; 
 
 html, body, #container {
   color: #1f3669;
 
-  font-family: $sans-serif;
+  //font-family: $sans-serif;
 
   // base font size
   @media (max-width: $break-point) {
-    font-size: 12px;
+    font-size: 15px;
   }
   @media (min-width: calc( #{$break-point} + 1px)) {
     font-size: 18px;
@@ -90,8 +93,17 @@ main {
 section {
 
   & > .sub-title {
-
-    font-size: 1.4rem;
+    font-family: $title;
+    text-align: center;
+    font-size: 2rem;
+  }
+  & > *:not(#players):not(.sub-title) {
+    font-family: $title;
+    font-size: 1.5rem;
+  }
+  & > #players p {
+    font-family: $sentence;
+    font-size: 1.26rem;
   }
 
   & > *:not(#players) {
