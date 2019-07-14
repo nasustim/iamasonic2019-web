@@ -152,6 +152,16 @@ const scene4 = new ScrollMagic.Scene({
   .setTween(tween4)
   .addTo(controller);
 
+const tweenTitle = TweenMax.fromTo('#header-logo', 2, {width: '90vw'}, {ease: Power4.easeOut, width: '50vw'})
+const sceneTitle = new ScrollMagic.Scene({
+  triggerElement: '#header-logo',
+  triggerHook: 'onLeave',
+  offset : 1,
+  reverse: false
+})
+  .setTween(tweenTitle)
+  .addTo(controller);
+
 /*const tween5 = TweenMax.fromTo('.easing-block5', 2, {opacity: 0, x: -120}, {ease: Power4.easeOut, opacity: 1, x: 0})
 const scene5 = new ScrollMagic.Scene({
   triggerElement: '.easing-block5',
