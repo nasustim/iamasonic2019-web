@@ -1,6 +1,6 @@
 @import './fonts.scss';
 
-$break-point: 600px;
+$break-point: 480px;
 $transition-time: 500ms;
 
 
@@ -86,7 +86,8 @@ main {
     width: 100%;
   }
   @media (min-width: calc( #{$break-point} + 1px)) {
-    width: 800px;
+    width: 80vw;
+    max-width: 1024px;
   }
 }
 
@@ -103,9 +104,7 @@ section {
   }
   & > #players p {
     font-family: $sentence;
-    font-size: 1.26rem;
   }
-
   & > *:not(#players) {
     padding: 10px;
   }
@@ -201,7 +200,7 @@ section {
             &[data-is-show="true"] {
 
 
-              font-size: 1rem;
+              font-size: 1.26rem;
 
               transform: matrix3d(
                 1, 0, 0, 0,
