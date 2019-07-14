@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run clean && webpack --mode production",
     "start": "webpack-dev-server",
-    "clean": "rm -rf ./dist",
+    "clean": "rm -rf ./docs",
     "test": "echo test"
   },
   "repository": "git+https://github.com/nasustim/iamasonic2019-web.git",
