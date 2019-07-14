@@ -60,7 +60,7 @@ header {
     justify-content: center;
     #header-logo {
       @media (max-width: $break-point) {
-        width: 60vw;
+        width: 85vw;
       }
       @media (min-width: calc( #{$break-point} + 1px)) {
         width: 50vw;

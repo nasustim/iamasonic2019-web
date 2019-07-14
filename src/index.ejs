@@ -2,6 +2,10 @@
 
 <%
   const playersData = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+  const siteTitle = 'iamasonic'
+  const siteUrl = 'https://www.iamas.ac.jp/iamasonic'
+  const topImgUri = '/res/header_logo.png'
+  const descript = 'iamasonicです。'
 %>
 
 <html lang="ja">
@@ -9,7 +13,19 @@
   <meta name="robots" content="noindex, nofollow">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>iamasonic 2019</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="https://www.iamas.ac.jp/wordpress02/images/favicon.ico">
+  <title><%= siteTitle %></title>
+
+  <meta property="og:url" content="<%= siteUrl %>" />
+  <meta property="og:title" content="<%= siteTitle %>" />
+  <meta property="og:description" content="<%= descript %>" />
+  <meta property="og:image" content="<%= siteUrl + topImgUri %>" />
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="<%= siteTitle %>" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@nasustim" />
 </head>
 <body>
   <div id="container">
