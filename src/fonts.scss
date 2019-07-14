@@ -7,7 +7,7 @@ $font-path: "./fonts/PixelMplus12";
        url('#{$font-path}-Regular.woff') format('woff'),  
        url('#{$font-path}-Regular.woff2') format('woff2'),            
        url('#{$font-path}-Regular.ttf') format('truetype'); 
-  font-weight: normal;         
+  font-weight: medium;         
 }
 @font-face {
   font-family: 'PixelMplus12';

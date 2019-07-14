@@ -133,19 +133,10 @@ section {
 
 
       a{
-        cursor: pointer;
-        @media (max-width: $break-point) {  
-          &:touch {
-            .player-card > img {
-              filter: brightness(0.4);
-            }
-          }
-        }
-        @media (min-width: calc( #{$break-point} + 1 )) {  
-          &:hover {
-            .player-card > img {
-              filter: brightness(0.4);
-            }
+        cursor: pointer;  
+        &:hover {
+          .player-card > img {
+            filter: brightness(0.4);
           }
         }
 

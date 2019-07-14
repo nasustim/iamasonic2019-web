@@ -4,10 +4,11 @@
   "description": "iamasonic 2019 summer 's webpage",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean && webpack --mode production",
+    "build": "npm run clean && webpack --mode production && npm run copy-fonts && npm run copy-favicon",
     "start": "webpack-dev-server",
     "clean": "rm -rf ./docs",
-    "copy-fonts": "cp src/fonts docs/",
+    "copy-favicon": "cp -r src/favicon.ico docs/",
+    "copy-fonts": "cp -r src/fonts docs/",
     "test": "echo test"
   },
   "repository": "git+https://github.com/nasustim/iamasonic2019-web.git",
