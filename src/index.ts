@@ -5,7 +5,8 @@ import {TweenMax, TimelineMax, Power4} from 'gsap'
 import {ScrollMagicPluginGsap} from 'scrollmagic-plugin-gsap'
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax)
 
-const backgroundImg = require('./res/header_back.jpg')
+const headerBackgroundImg = require('./res/header_back.png')
+const footerBackgroundImg = require('./res/footer_back.png')
 
 /**
  * canvas
@@ -13,6 +14,8 @@ const backgroundImg = require('./res/header_back.jpg')
 
 const headerCanvas: HTMLCanvasElement = document.querySelector('#header-image')
 let headerCtx: CanvasRenderingContext2D
+const footerCanvas: HTMLCanvasElement = document.querySelector('#footer-image')
+let footerCtx: CanvasRenderingContext2D
 
 function* fInverseFluction (frame: number, from: number, to: number, max: number) {
   const waves: Array<(number) => number> = (new Array(to - from)).map((v, i) => (x) => Math.sin(x * (i + 1)) * (max / (i + 1)))
@@ -21,14 +24,33 @@ function* fInverseFluction (frame: number, from: number, to: number, max: number
   }
 }
 
-function initCanvas (canvas: HTMLCanvasElement): CanvasRenderingContext2D {
-  browserResize(canvas)
+function initCanvasForHeader (canvas: HTMLCanvasElement): CanvasRenderingContext2D {
+  browserResizeForHeader(canvas)
+  return canvas.getContext('2d')
+}
+function initCanvasForFooter (canvas: HTMLCanvasElement, imgPath: string): CanvasRenderingContext2D {
+  browserResizeForFooter(canvas, imgPath)
   return canvas.getContext('2d')
 }
 
-function browserResize (canvas: HTMLCanvasElement): void {
+function browserResizeForHeader (canvas: HTMLCanvasElement): void {
   canvas.setAttribute('width', window.innerWidth.toString())
   canvas.setAttribute('height', window.innerHeight.toString())
+}
+async function browserResizeForFooter (canvas: HTMLCanvasElement, imgPath: string): Promise<void> {
+  let img = await loadImg(imgPath)
+  let imgWidth = img.width
+  let imgHeight = img.height
+
+  let deviceWidth = window.innerWidth
+  let deviceHeight = window.innerHeight
+  let deviceToImgRatio = imgWidth / deviceWidth
+  
+  let width = imgWidth / deviceToImgRatio
+  let height = imgHeight / deviceToImgRatio
+  
+  canvas.setAttribute('width', width + 'px')
+  canvas.setAttribute('height', height + 'px')
 }
 
 async function loadImg (imgPath: string): Promise<HTMLImageElement | any> {
@@ -72,10 +94,27 @@ function headerSizeCulculate (img: HTMLImageElement): any {
   return {sx, sy, sw, sh, dx, dy, dw, dh}
 }
 
-async function appendBackImgToCanvas (ctx: CanvasRenderingContext2D, imgPath: string): Promise<CanvasRenderingContext2D> {
+function footerSizeCulculate (img: HTMLImageElement, canvas:HTMLCanvasElement): any {
+  let canvasWidth = canvas.width
+  let imgWidth = img.width
+  let canvasHeight = canvas.height
+  let imgHeight = img.height
+
+  return {sx: 0, sy: 0, sw: imgWidth, sh: imgHeight, dx: 0, dy: 0, dw: canvasWidth, dh: canvasHeight}
+}
+
+
+async function appendHeaderBackImgToCanvas (ctx: CanvasRenderingContext2D, imgPath: string): Promise<CanvasRenderingContext2D> {
   let img = await loadImg(imgPath)
   let size = headerSizeCulculate(img)
 //  console.log(size)
+  ctx.drawImage(img, size.sx, size.sy, size.sw, size.sh, size.dx, size.dy, size.dw, size.dh)
+  return ctx
+}
+async function appendFooterBackImgToCanvas (ctx: CanvasRenderingContext2D, imgPath: string, canvas: HTMLCanvasElement): Promise<CanvasRenderingContext2D> {
+  let img = await loadImg(imgPath)
+  let size = footerSizeCulculate(img, canvas)
+  console.log(size)
   ctx.drawImage(img, size.sx, size.sy, size.sw, size.sh, size.dx, size.dy, size.dw, size.dh)
   return ctx
 }
@@ -86,14 +125,18 @@ window.addEventListener('resize', function (event) {
     clearTimeout(resizeTimer);
   }
   resizeTimer = setTimeout(() => {
-    headerCtx = initCanvas(headerCanvas)
-    appendBackImgToCanvas(headerCtx, backgroundImg)
+    headerCtx = initCanvasForHeader(headerCanvas)
+    appendHeaderBackImgToCanvas(headerCtx, headerBackgroundImg)
+    footerCtx = initCanvasForFooter(footerCanvas, footerBackgroundImg)
+    appendFooterBackImgToCanvas(footerCtx, footerBackgroundImg, footerCanvas)
   }, 200)
 })
 
 // exec
-headerCtx = initCanvas(headerCanvas)
-appendBackImgToCanvas(headerCtx, backgroundImg)
+headerCtx = initCanvasForHeader(headerCanvas)
+appendHeaderBackImgToCanvas(headerCtx, headerBackgroundImg)
+footerCtx = initCanvasForFooter(footerCanvas, footerBackgroundImg)
+appendFooterBackImgToCanvas(footerCtx, footerBackgroundImg, footerCanvas)
 
 /**
  * easing animation
@@ -144,7 +187,7 @@ const scene4 = new ScrollMagic.Scene({
   .setTween(tween4)
   .addTo(controller);
 
-const tween5 = TweenMax.fromTo('.easing-block5', 2, {opacity: 0, x: -120}, {ease: Power4.easeOut, opacity: 1, x: 0})
+/*const tween5 = TweenMax.fromTo('.easing-block5', 2, {opacity: 0, x: -120}, {ease: Power4.easeOut, opacity: 1, x: 0})
 const scene5 = new ScrollMagic.Scene({
   triggerElement: '.easing-block5',
   triggerHook: 'onEnter',
@@ -152,7 +195,7 @@ const scene5 = new ScrollMagic.Scene({
   reverse: false
 })
   .setTween(tween5)
-  .addTo(controller);
+  .addTo(controller);*/
 
 // player's detail
 

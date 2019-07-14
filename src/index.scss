@@ -17,12 +17,8 @@ html, body, #container {
 }
 
 body {
-  /*position: relative;
-  #container {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }*/
+  
+  background-color: #f5c81f;
 }
 
 #container {
@@ -31,7 +27,6 @@ body {
 
   flex-direction: column;
 
-  background-color: #E13F8F;
 }
 
 header {
@@ -201,10 +196,18 @@ section {
 footer {
 //  background-color: blue;
   width: 100vw;
-  height: 100px;
 
   margin: 50px 0 0 0;
   padding: 0;
+
+  position: relative;
+
+  #footer-image {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+  }
 
   p{
     color: white;
