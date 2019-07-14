@@ -9,6 +9,12 @@ const headerBackgroundImg = require('./res/header_back.png')
 const footerBackgroundImg = require('./res/footer_back.png')
 
 /**
+ * view
+ */
+window.scrollTo(0, 0)
+
+
+/**
  * canvas
  */
 

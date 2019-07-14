@@ -1,7 +1,12 @@
 $break-point: 600px;
 $transition-time: 500ms;
 
+$sans-serif: -apple-system,BlinkMacSystemFont,"Helvetica Neue","游ゴシック Medium",YuGothic,YuGothicM,"Hiragino Kaku Gothic ProN",メイリオ,Meiryo,sans-serif;
+
 html, body, #container {
+  color: #1f3669;
+
+  font-family: $sans-serif;
 
   // base font size
   @media (max-width: $break-point) {
@@ -84,7 +89,6 @@ main {
 section {
 
   & > .sub-title {
-    color: white;
 
     font-size: 1.4rem;
   }
@@ -140,7 +144,7 @@ section {
             border: solid 0px #ffffff;
           }
           .player-detail {
-            background-color: gray;
+            background-color: #72c7d1;
             margin: 0;
 
             overflow: hidden;
@@ -158,7 +162,7 @@ section {
               //display: none;
               opacity: 0;
 
-              color: rgba($color: #000000, $alpha: 0);
+              color: rgba($color: #1f3669, $alpha: 0);
 
 
               -webkit-transition-property: font-size transform padding height opacity /*display*/ color;
@@ -185,7 +189,7 @@ section {
               //display: block;
               opacity: 1;
 
-              color: rgba($color: #000000, $alpha: 1);
+              color: rgba($color: #1f3669, $alpha: 1);
 
               -webkit-transition-property: font-size transform padding height opacity /*display*/ color;
               -webkit-transition-duration: $transition-time;
@@ -212,15 +216,12 @@ footer {
   position: relative;
 
   #footer-image {
+
+    width: 100%;
+
     position: absolute;
 
     left: 0;
     top: 0;
-  }
-
-  p{
-    color: white;
-
-    text-align: center;
   }
 }

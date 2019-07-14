@@ -6,6 +6,7 @@
   const siteUrl = 'https://www.iamas.ac.jp/iamasonic'
   const topImgUri = '/res/header_logo.png'
   const descript = 'iamasonicです。'
+  const faviconUri = '/res/favicon.ico'
 %>
 
 <html lang="ja">
@@ -14,9 +15,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="shortcut icon" href="https://www.iamas.ac.jp/wordpress02/images/favicon.ico">
+  <link rel="shortcut icon" href="<%= siteUrl + faviconUri %>">
   <title><%= siteTitle %></title>
-
   <meta property="og:url" content="<%= siteUrl %>" />
   <meta property="og:title" content="<%= siteTitle %>" />
   <meta property="og:description" content="<%= descript %>" />
