@@ -180,7 +180,7 @@ const scene5 = new ScrollMagic.Scene({
 
 let players = require('./data')
   .map(
-    (v, i) => document.getElementById(`player-${v}`)
+    (v, i) => document.getElementById(`player-${v.id}`)
   )
 
 for(let i in players)

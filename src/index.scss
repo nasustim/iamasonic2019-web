@@ -87,7 +87,7 @@ main {
   }
   @media (min-width: calc( #{$break-point} + 1px)) {
     width: 80vw;
-    max-width: 1024px;
+    max-width: 1240px;
   }
 }
 
@@ -170,7 +170,6 @@ section {
             margin: 0;
 
             overflow: hidden;
-
             display: block;
 
             &[data-is-show="false"] {
@@ -184,16 +183,16 @@ section {
 
               padding: 0 12px;
 
-              //display: none;
+
               opacity: 0;
 
               color: rgba($color: #1f3669, $alpha: 0);
 
 
-              -webkit-transition-property: font-size -webkit-transform transform transform-origin -webkit-transform-origin padding height opacity /*display*/ color;
+              -webkit-transition-property: font-size -webkit-transform transform transform-origin -webkit-transform-origin padding height opacity color;
               -webkit-transition-duration: $transition-time;
               -webkit-transition-timing-function: ease-out;
-              transition-property: font-size -webkit-transform transform transform-origin -webkit-transform-origin padding opacity /*display*/ color;
+              transition-property: font-size -webkit-transform transform transform-origin -webkit-transform-origin padding opacity color;
               transition-duration: $transition-time;
               transition-timing-function: ease-out;
             }
@@ -214,20 +213,21 @@ section {
                 0, 0, 1, 0,
                 0, 0, 0, 1
               );
+
               transform-origin: center 0 0px; 
               -webkit-transform-origin: center 0 0px;
 
               padding: 12px;
 
-              //display: block;
+              display: block;
               opacity: 1;
 
               color: rgba($color: #1f3669, $alpha: 1);
 
-              -webkit-transition-property: font-size transform -webkit-transform transform-origin -webkit-transform-origin padding height opacity /*display*/ color;
+              -webkit-transition-property: font-size transform -webkit-transform transform-origin -webkit-transform-origin padding height opacity color;
               -webkit-transition-duration: $transition-time;
               -webkit-transition-timing-function: ease-out;
-              transition-property: font-size transform -webkit-transform transform-origin -webkit-transform-origin padding height opacity /*display*/ color;
+              transition-property: font-size transform -webkit-transform transform-origin -webkit-transform-origin padding height opacity color;
               transition-duration: $transition-time;
               transition-timing-function: ease-out;
             }
