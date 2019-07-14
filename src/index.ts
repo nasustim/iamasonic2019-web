@@ -156,7 +156,7 @@ const scene4 = new ScrollMagic.Scene({
   .setTween(tween4)
   .addTo(controller);
 
-const tweenTitle = TweenMax.fromTo('#header-logo', 2, {width: '90vw'}, {ease: Power4.easeOut, width: GLOBAL_WIDTH > threshold ? '50vw' : '70vw'})
+const tweenTitle = TweenMax.fromTo('#header-logo', 2, {width: GLOBAL_WIDTH > threshold ? '90vw' : '100vw'}, {ease: Power4.easeOut, width: GLOBAL_WIDTH > threshold ? '50vw' : '70vw'})
 const sceneTitle = new ScrollMagic.Scene({
   triggerElement: 'header',
   triggerHook: 'onLeave',
@@ -205,7 +205,7 @@ headerCtx = initCanvasForHeader(headerCanvas)
 appendBackImgToCanvas(headerCtx, headerBackgroundImg, headerCanvas)
 //footerCtx = initCanvasForFooter(footerCanvas, footerBackgroundImg)
 //appendBackImgToCanvas(footerCtx, footerBackgroundImg, footerCanvas)
-const setFooter = () =>{
+const setFooter = (): void =>{
   let footer = document.querySelector('footer')
   let footerBack = document.getElementById('footer-image')
   let footerImg = new Image()

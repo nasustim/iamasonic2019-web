@@ -209,7 +209,7 @@ section {
 
               color: rgba($color: #1f3669, $alpha: 1);
 
-              -webkit-transition-property: font-size transform webkit-transform padding height opacity /*display*/ color;
+              -webkit-transition-property: font-size transform -webkit-transform padding height opacity /*display*/ color;
               -webkit-transition-duration: $transition-time;
               -webkit-transition-timing-function: ease-out;
               transition-property: font-size transform -webkit-transform padding height opacity /*display*/ color;
