@@ -78,7 +78,7 @@ async function appendBackImgToCanvas (ctx: CanvasRenderingContext2D, imgPath: st
   return ctx
 }
 
-/*let resizeTimer
+let resizeTimer
 window.addEventListener('resize', function (event) {
   if (resizeTimer != null) {
     clearTimeout(resizeTimer);
@@ -88,8 +88,8 @@ window.addEventListener('resize', function (event) {
     appendBackImgToCanvas(headerCtx, headerBackgroundImg, headerCanvas)
     footerCtx = initCanvasForFooter(footerCanvas, footerBackgroundImg)
     appendBackImgToCanvas(footerCtx, footerBackgroundImg, footerCanvas)
-  }, 200)
-})*/
+  }, 120)
+})
 
 // exec
 headerCtx = initCanvasForHeader(headerCanvas)
