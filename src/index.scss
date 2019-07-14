@@ -3,6 +3,7 @@ $transition-time: 500ms;
 
 $sans-serif: -apple-system,BlinkMacSystemFont,"Helvetica Neue","游ゴシック Medium",YuGothic,YuGothicM,"Hiragino Kaku Gothic ProN",メイリオ,Meiryo,sans-serif;
 
+
 html, body, #container {
   color: #1f3669;
 
@@ -121,9 +122,19 @@ section {
 
 
       a{
-        &:hover {
-          .player-card > img {
-            filter: brightness(0.4);
+        cursor: pointer;
+        @media (max-width: $break-point) {  
+          &:touch {
+            .player-card > img {
+              filter: brightness(0.4);
+            }
+          }
+        }
+        @media (min-width: calc( #{$break-point} + 1 )) {  
+          &:hover {
+            .player-card > img {
+              filter: brightness(0.4);
+            }
           }
         }
 
@@ -155,7 +166,8 @@ section {
 
               font-size: 0;
 
-              transform:matrix3d(1,0,0.00,0,0.00,0,1.00,0.008,0,-1,0,0,0,0,0,1);
+              transform: matrix3d(1,0,0.00,0,0.00,0,1.00,0.008,0,-1,0,0,0,0,0,1);
+              -webkit-transform: matrix3d(1,0,0.00,0,0.00,0,1.00,0.008,0,-1,0,0,0,0,0,1);
 
               padding: 0 12px;
 
@@ -165,10 +177,10 @@ section {
               color: rgba($color: #1f3669, $alpha: 0);
 
 
-              -webkit-transition-property: font-size transform padding height opacity /*display*/ color;
+              -webkit-transition-property: font-size -webkit-transform transform padding height opacity /*display*/ color;
               -webkit-transition-duration: $transition-time;
               -webkit-transition-timing-function: ease-out;
-              transition-property: font-size transform padding opacity /*display*/ color;
+              transition-property: font-size -webkit-transform transform padding opacity /*display*/ color;
               transition-duration: $transition-time;
               transition-timing-function: ease-out;
             }
@@ -183,6 +195,12 @@ section {
                 0, 0, 1, 0,
                 0, 0, 0, 1
               );
+              -webkit-transform: matrix3d(
+                1, 0, 0, 0,
+                0, 1, 0, 0,
+                0, 0, 1, 0,
+                0, 0, 0, 1
+              );
 
               padding: 12px;
 
@@ -191,10 +209,10 @@ section {
 
               color: rgba($color: #1f3669, $alpha: 1);
 
-              -webkit-transition-property: font-size transform padding height opacity /*display*/ color;
+              -webkit-transition-property: font-size transform webkit-transform padding height opacity /*display*/ color;
               -webkit-transition-duration: $transition-time;
               -webkit-transition-timing-function: ease-out;
-              transition-property: font-size transform padding height opacity /*display*/ color;
+              transition-property: font-size transform -webkit-transform padding height opacity /*display*/ color;
               transition-duration: $transition-time;
               transition-timing-function: ease-out;
             }

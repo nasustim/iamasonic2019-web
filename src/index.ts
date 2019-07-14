@@ -8,6 +8,10 @@ ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax)
 const headerBackgroundImg = require('./res/header_back.png')
 const footerBackgroundImg = require('./res/footer_back.png')
 
+var GLOBAL_WIDTH = window.innerWidth
+var GLOBAL_HEIGHT = window.innerHeight
+var threshold = 600
+
 /**
  * view
  */
@@ -90,6 +94,8 @@ window.addEventListener('resize', function (event) {
     clearTimeout(resizeTimer);
   }
   resizeTimer = setTimeout(() => {
+    GLOBAL_WIDTH = window.innerWidth
+    GLOBAL_HEIGHT = window.innerHeight
     headerCtx = initCanvasForHeader(headerCanvas)
     appendBackImgToCanvas(headerCtx, headerBackgroundImg, headerCanvas)
     footerCtx = initCanvasForFooter(footerCanvas, footerBackgroundImg)
@@ -152,7 +158,7 @@ const scene4 = new ScrollMagic.Scene({
   .setTween(tween4)
   .addTo(controller);
 
-const tweenTitle = TweenMax.fromTo('#header-logo', 2, {width: '90vw'}, {ease: Power4.easeOut, width: '50vw'})
+const tweenTitle = TweenMax.fromTo('#header-logo', 2, {width: '90vw'}, {ease: Power4.easeOut, width: GLOBAL_WIDTH > threshold ? '50vw' : '70vw'})
 const sceneTitle = new ScrollMagic.Scene({
   triggerElement: '#header-logo',
   triggerHook: 'onLeave',
