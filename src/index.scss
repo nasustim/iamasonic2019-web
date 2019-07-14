@@ -167,7 +167,9 @@ section {
               font-size: 0;
 
               transform: matrix3d(1,0,0.00,0,0.00,0,1.00,0.008,0,-1,0,0,0,0,0,1);
-              -webkit-transform: matrix3d(1,0,0.00,0,0.00,0,1.00,0.008,0,-1,0,0,0,0,0,1);
+              -webkit-transform: matrix3d(1,0,0.00,0,0.00,0,1.00,0.008,0,-1,0,0,0,0,0,1); 
+              transform-origin: center 0 0px; 
+              -webkit-transform-origin: center 0 0px;
 
               padding: 0 12px;
 
@@ -177,10 +179,10 @@ section {
               color: rgba($color: #1f3669, $alpha: 0);
 
 
-              -webkit-transition-property: font-size -webkit-transform transform padding height opacity /*display*/ color;
+              -webkit-transition-property: font-size -webkit-transform transform transform-origin -webkit-transform-origin padding height opacity /*display*/ color;
               -webkit-transition-duration: $transition-time;
               -webkit-transition-timing-function: ease-out;
-              transition-property: font-size -webkit-transform transform padding opacity /*display*/ color;
+              transition-property: font-size -webkit-transform transform transform-origin -webkit-transform-origin padding opacity /*display*/ color;
               transition-duration: $transition-time;
               transition-timing-function: ease-out;
             }
@@ -201,6 +203,8 @@ section {
                 0, 0, 1, 0,
                 0, 0, 0, 1
               );
+              transform-origin: center 0 0px; 
+              -webkit-transform-origin: center 0 0px;
 
               padding: 12px;
 
@@ -209,10 +213,10 @@ section {
 
               color: rgba($color: #1f3669, $alpha: 1);
 
-              -webkit-transition-property: font-size transform -webkit-transform padding height opacity /*display*/ color;
+              -webkit-transition-property: font-size transform -webkit-transform transform-origin -webkit-transform-origin padding height opacity /*display*/ color;
               -webkit-transition-duration: $transition-time;
               -webkit-transition-timing-function: ease-out;
-              transition-property: font-size transform -webkit-transform padding height opacity /*display*/ color;
+              transition-property: font-size transform -webkit-transform transform-origin -webkit-transform-origin padding height opacity /*display*/ color;
               transition-duration: $transition-time;
               transition-timing-function: ease-out;
             }

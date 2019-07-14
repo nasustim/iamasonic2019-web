@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
-//const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 const mode = "development";
 const enabledSourceMap = mode === "development"
@@ -53,7 +53,7 @@ module.exports = {
     ]
   },
   plugins: [
-   // new UglifyJSPlugin(),
+    new UglifyJSPlugin(),
     new HtmlWebpackPlugin({
       filename: './index.html',
       template: './src/index.ejs'
