@@ -178,7 +178,7 @@ const scene5 = new ScrollMagic.Scene({
 
 // player's detail
 
-let players = require('./data')
+let players = require('./data').playersData
   .map(
     (v, i) => document.getElementById(`player-${v.id}`)
   )

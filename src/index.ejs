@@ -44,7 +44,18 @@
       <section>
         <h2 class="easing-block2 sub-title">タイムテーブル</h2>
         <div class="easing-block2" id="timetable">
-          aaa
+          <table id="table-timetable">
+            <tr>
+              <th>Time</th><th>Performer</th><th>Genre</th>
+            </tr>
+            <% for(let i in timetableData){ %>
+              <tr>
+                <td><%= timetableData[i].time %></td>
+                <td><%= timetableData[i].name %></td>
+                <td><%= timetableData[i].genre %></td>
+              </tr>
+            <% } %>
+          </table>
         </div>
       </section>
       <section>

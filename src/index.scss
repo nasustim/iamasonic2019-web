@@ -93,6 +93,14 @@ main {
 
 section {
 
+  table {
+    tr {
+      td{
+        padding: 5px;
+      }
+    }
+  }
+
   & > .sub-title {
     font-family: $title;
     text-align: center;
@@ -101,6 +109,9 @@ section {
   & > *:not(#players):not(.sub-title) {
     font-family: $title;
     font-size: 1.5rem;
+  }
+  & > #players h3 {
+    font-family: $sentence;
   }
   & > #players p {
     font-family: $sentence;
@@ -168,7 +179,12 @@ section {
 
             &[data-is-show="false"] {
 
-              font-size: 0;
+              h3{
+                font-size: 0;
+              }
+              p{
+                font-size: 0;
+              }
 
               transform: matrix3d(1,0,0.00,0,0.00,0,1.00,0.008,0,-1,0,0,0,0,0,1);
               -webkit-transform: matrix3d(1,0,0.00,0,0.00,0,1.00,0.008,0,-1,0,0,0,0,0,1); 
@@ -177,13 +193,11 @@ section {
 
               padding: 0 12px;
 
-
               opacity: 0;
 
               color: rgba($color: #1f3669, $alpha: 0);
 
               filter: saturate(150%);
-
 
               -webkit-transition-property: filter font-size -webkit-transform transform transform-origin -webkit-transform-origin padding height opacity color;
               -webkit-transition-duration: $transition-time;
@@ -196,8 +210,12 @@ section {
 
               filter: saturate(70%);
 
-              font-size: 1.26rem;
-
+              h3{
+                font-size: 1.26rem;
+              }
+              p{
+                font-size: 1.05rem;
+              }
               transform: matrix3d(
                 1, 0, 0, 0,
                 0, 1, 0, 0,

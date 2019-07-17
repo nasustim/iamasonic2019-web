@@ -6,7 +6,7 @@ const path = require('path')
 const mode = "development";
 const enabledSourceMap = mode === "development"
 
-const playersData = require('./src/data')
+const {playersData, timetableData} = require('./src/data')
 
 module.exports = {
   mode,
@@ -28,7 +28,8 @@ module.exports = {
           {
             loader: 'ejs-html-loader',
             options: {
-              playersData: playersData 
+              playersData: playersData,
+              timetableData: timetableData,
             }
           }
         ]
