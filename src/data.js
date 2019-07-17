@@ -117,7 +117,7 @@ const timetableData = [{
   genre: 'プログレッシブ・インダストリアル・アンビエント少しプログロックなAmbient'
 },{
   id: 'pohapipope',
-  name: 'ぽぱぴぽぺ',
+  name: 'ぽぱぴぽぺ & mrt(ry',
   description: `強めのメスになるため日々修行。</br>
 水の都でも死なない、ために。</br>
 旅先で必ず見るのは民家の屋根、</br>

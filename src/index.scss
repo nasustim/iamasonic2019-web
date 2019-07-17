@@ -3,9 +3,10 @@
 $break-point: 480px;
 $transition-time: 500ms;
 
-
 $title: PixelMplus12;
 $sentence: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック Medium", YuGothic, YuGothicM, "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif; 
+
+$content-color: #1f3669;
 
 html, body, #container {
   color: #1f3669;
@@ -95,8 +96,12 @@ section {
 
   table {
     tr {
-      td{
+      td, th{
         padding: 5px;
+        border-bottom: solid 3px $content-color;
+      }
+      .tt-name, .tt-time {
+        text-align: center;
       }
     }
   }
@@ -162,7 +167,7 @@ section {
           display: flex;
           flex-direction: column;
           img {
-            filter: saturate(150%);
+            filter: saturate(180%);
             transition: filter 0.3s;
             width: 100%;
 
@@ -197,7 +202,7 @@ section {
 
               color: rgba($color: #1f3669, $alpha: 0);
 
-              filter: saturate(150%);
+              filter: saturate(180%);
 
               -webkit-transition-property: filter font-size -webkit-transform transform transform-origin -webkit-transform-origin padding height opacity color;
               -webkit-transition-duration: $transition-time;

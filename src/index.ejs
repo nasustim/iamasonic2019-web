@@ -46,13 +46,13 @@
         <div class="easing-block2" id="timetable">
           <table id="table-timetable">
             <tr>
-              <th>Time</th><th>Performer</th><th>Genre</th>
+              <th width="140">Time</th><th width="250">Performer</th><th>Genre</th>
             </tr>
             <% for(let i in timetableData){ %>
               <tr>
-                <td><%= timetableData[i].time %></td>
-                <td><%= timetableData[i].name %></td>
-                <td><%= timetableData[i].genre %></td>
+                <td class="tt-time"><%= timetableData[i].time %></td>
+                <td class="tt-name"><%= timetableData[i].name %></td>
+                <td class="tt-genre"><%= timetableData[i].genre %></td>
               </tr>
             <% } %>
           </table>
