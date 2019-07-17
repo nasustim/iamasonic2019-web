@@ -99,6 +99,8 @@ section {
 
     display: flex;
     flex-direction: row; 
+
+    flex-wrap: wrap-reverse;
     & > *{
       margin: 15px;
       text-align: center;
