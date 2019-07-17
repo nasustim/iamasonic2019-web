@@ -1,13 +1,12 @@
 <a ontouchstart="" class="player-detail-toggle" id="player-<%= id %>">
   <article class="player-card" id="card-<%= id %>">
-    <img src="./res/img1.jpg">
+    <img src="./res/<%= `${id}${imgFormat}` %>">
     <div class="player-detail" id="detail-player-<%= id %>" data-is-show="false">
       <p>
         <%= name %>
       </p>
       <p>
-        <%= description %><br />
-        <object><a href="<%- url %>"><%- url %></a></object>
+        <%- description %>
       </p>
     </div>
   </article>

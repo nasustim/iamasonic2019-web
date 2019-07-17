@@ -1,42 +1,6 @@
 <!DOCTYPE html>
 
 <%
-  const playersData = [{
-    id: 'a',
-    name: '恵比寿',
-    description: 'がんばります',
-    url: 'http://example.com'
-  },{
-    id: 'b',
-    name: 'プレモル',
-    description: 'がんばります',
-    url: 'http://example.com'
-  },,{
-    id: 'c',
-    name: 'プレモル',
-    description: 'がんばります',
-    url: 'http://example.com'
-  },,{
-    id: 'd',
-    name: 'プレモル',
-    description: 'がんばります',
-    url: 'http://example.com'
-  },,{
-    id: 'e',
-    name: 'プレモル',
-    description: 'がんばります',
-    url: 'http://example.com'
-  },,{
-    id: 'f',
-    name: 'プレモル',
-    description: 'がんばります',
-    url: 'http://example.com'
-  },,{
-    id: 'g',
-    name: 'プレモル',
-    description: 'がんばります',
-    url: 'http://example.com'
-  },]
   const siteTitle = 'iamasonic'
   const siteUrl = 'https://www.iamas.ac.jp/iamasonic'
   const topImgUri = '/res/header_logo.png'
@@ -89,21 +53,21 @@
           <div class="players-column">
             <% for(let i in playersData){ %>
               <% if(i % 3 === 0){ %>
-                <%- include('./components/player.ejs', {id: playersData[i].id, name: playersData[i].name, description: playersData[i].description, url: playersData[i].url, key: i}) %>
+                <%- include('./components/player.ejs', {id: playersData[i].id, name: playersData[i].name, description: playersData[i].description, imgFormat: playersData[i].imgFormat, key: i}) %>
               <% } %>
             <% } %>
           </div>
           <div class="players-column">
             <% for(let i in playersData){ %>
               <% if(i % 3 === 1){ %>
-                <%- include('./components/player.ejs', {id: playersData[i].id, name: playersData[i].name, description: playersData[i].description, url: playersData[i].url, key: i}) %>
+                <%- include('./components/player.ejs', {id: playersData[i].id, name: playersData[i].name, description: playersData[i].description, imgFormat: playersData[i].imgFormat, key: i}) %>
               <% } %>
             <% } %>
           </div>
           <div class="players-column">
             <% for(let i in playersData){ %>
               <% if(i % 3 === 2){ %>
-                <%- include('./components/player.ejs', {id: playersData[i].id, name: playersData[i].name, description: playersData[i].description, url: playersData[i].url, key: i}) %>
+                <%- include('./components/player.ejs', {id: playersData[i].id, name: playersData[i].name, description: playersData[i].description, imgFormat: playersData[i].imgFormat, key: i}) %>
               <% } %>
             <% } %>
           </div>

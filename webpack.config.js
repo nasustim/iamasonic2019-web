@@ -6,6 +6,8 @@ const path = require('path')
 const mode = "development";
 const enabledSourceMap = mode === "development"
 
+const playersData = require('./src/data')
+
 module.exports = {
   mode,
   entry: './src/index.ts',
@@ -21,7 +23,15 @@ module.exports = {
       },
       {
         test: /\.ejs$/,
-        use: ['html-loader', `ejs-html-loader`]
+        use: [
+          'html-loader',
+          {
+            loader: 'ejs-html-loader',
+            options: {
+              playersData: playersData 
+            }
+          }
+        ]
       },
       {
         test: /\.scss$/,
@@ -75,6 +85,6 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'docs'),
     host: '0.0.0.0',
-    port: 8000
+    port: 8001
   }
 }
