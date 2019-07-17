@@ -138,7 +138,7 @@ section {
         cursor: pointer;  
         &:hover {
           .player-card > img {
-            filter: brightness(0.4);
+            filter: saturate(100%) brightness(0.4);
           }
         }
 
@@ -151,6 +151,7 @@ section {
           display: flex;
           flex-direction: column;
           img {
+            filter: saturate(150%);
             transition: filter 0.3s;
             width: 100%;
 
@@ -181,16 +182,19 @@ section {
 
               color: rgba($color: #1f3669, $alpha: 0);
 
+              filter: saturate(150%);
 
-              -webkit-transition-property: font-size -webkit-transform transform transform-origin -webkit-transform-origin padding height opacity color;
+
+              -webkit-transition-property: filter font-size -webkit-transform transform transform-origin -webkit-transform-origin padding height opacity color;
               -webkit-transition-duration: $transition-time;
               -webkit-transition-timing-function: ease-out;
-              transition-property: font-size -webkit-transform transform transform-origin -webkit-transform-origin padding opacity color;
+              transition-property: filter font-size -webkit-transform transform transform-origin -webkit-transform-origin padding opacity color;
               transition-duration: $transition-time;
               transition-timing-function: ease-out;
             }
             &[data-is-show="true"] {
 
+              filter: saturate(70%);
 
               font-size: 1.26rem;
 
@@ -217,10 +221,10 @@ section {
 
               color: rgba($color: #1f3669, $alpha: 1);
 
-              -webkit-transition-property: font-size transform -webkit-transform transform-origin -webkit-transform-origin padding height opacity color;
+              -webkit-transition-property: filter font-size transform -webkit-transform transform-origin -webkit-transform-origin padding height opacity color;
               -webkit-transition-duration: $transition-time;
               -webkit-transition-timing-function: ease-out;
-              transition-property: font-size transform -webkit-transform transform-origin -webkit-transform-origin padding height opacity color;
+              transition-property: filter font-size transform -webkit-transform transform-origin -webkit-transform-origin padding height opacity color;
               transition-duration: $transition-time;
               transition-timing-function: ease-out;
             }
