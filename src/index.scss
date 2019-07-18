@@ -5,7 +5,7 @@ $transition-time: 500ms;
 
 $sub-title: PixelMplus12;
 $sentence: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック Medium", YuGothic, YuGothicM, "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif; 
-$title: $sentence;
+$title: $sub-title;
 
 $content-color: #1f3669;
 $title-color: #162a55;
@@ -97,9 +97,13 @@ main {
 
 section {
 
-  margin-top: 35px;
+  margin-top: 65px;
 
-  #event {
+  p {
+    margin: 0;
+  }
+
+  #event, #access {
 
     display: flex;
     flex-direction: row; 
@@ -108,9 +112,18 @@ section {
 
     flex-wrap: wrap-reverse;
     & > *{
+      width: calc(50% - 30px);
+    }
+    p, h4, h3{
       margin: 15px;
       text-align: center;
     }
+  }
+
+  .outro-sentence{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   table {
@@ -141,14 +154,15 @@ section {
     font-size: 2rem;
     color: $title-color;
   }
-  & > .intro {
-    font-family: $title;
+  & > .intro, & .outro {
+    font-family: $sub-title;
     text-align: center;
     font-size: 1.58rem;
-
-    margin: 70px 0;
   }
-  & > *:not(#players):not(.sub-title) {
+  & > .intro:nth-child(1){
+    margin-top: 70px;
+  }
+  & > *:not(#players):not(.sub-title):not(.intro):not(.outro) {
     font-family: $title;
     font-size: 1.5rem;
   }

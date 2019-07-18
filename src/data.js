@@ -31,11 +31,11 @@ const playersData = [{
   time: '18:20',
   genre: 'computer music'
 },{
-  id: 'img1',   // skameda
+  id: 'skameda',   // skameda
   name: '亀田シゲル',
   description: '令和時代のペインティングってなんだろう',
   url: 'http://example.com',
-  imgFormat: '.jpg',
+  imgFormat: '.png',
   time: '18:50',
   genre: 'はじめての岐阜の夏'
 },{
@@ -100,11 +100,11 @@ const timetableData = [{
   time: '18:20',
   genre: 'computer music'
 },{
-  id: 'img1',   // skameda
+  id: 'skameda',   // skameda
   name: '亀田シゲル',
   description: '令和時代のペインティングってなんだろう',
   url: 'http://example.com',
-  imgFormat: '.jpg',
+  imgFormat: '.png',
   time: '18:50',
   genre: 'はじめての岐阜の夏'
 },{
