@@ -3,10 +3,12 @@
 $break-point: 480px;
 $transition-time: 500ms;
 
-$title: PixelMplus12;
+$sub-title: PixelMplus12;
 $sentence: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック Medium", YuGothic, YuGothicM, "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif; 
+$title: $sentence;
 
 $content-color: #1f3669;
+$title-color: #162a55;
 $back-color: #f5c81f;
 
 html, body, #container {
@@ -112,6 +114,7 @@ section {
   }
 
   table {
+    width: 100%;
     tr {
       td, th{
         padding: 5px;
@@ -133,14 +136,15 @@ section {
   }
 
   & > .sub-title {
-    font-family: $title;
+    font-family: $sub-title;
     text-align: center;
     font-size: 2rem;
+    color: $title-color;
   }
   & > .intro {
     font-family: $title;
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.58rem;
 
     margin: 70px 0;
   }
@@ -150,6 +154,10 @@ section {
   }
   & > #players h3 {
     font-family: $sentence;
+  }
+  & h4 {
+    font-family: $sub-title;
+    color: $title-color;
   }
   & > #players p {
     font-family: $sentence;
