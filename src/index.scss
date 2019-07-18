@@ -82,10 +82,14 @@ header {
   }
 }
 
+footer {
+  margin-top: 0; 
+}
+
 main {
   position: relative;
 
-  margin-top: calc(250px);
+  //margin-top: calc(250px);
   @media (max-width: $break-point) {
     width: 100%;
   }
@@ -97,6 +101,10 @@ main {
 
 section {
 
+  &:nth-child(1) {
+    margin-top: 0;
+  }
+
   margin-top: 65px;
 
   p {
@@ -106,21 +114,44 @@ section {
   #event, #access {
 
     display: flex;
-    flex-direction: row; 
 
     justify-content: center;
+    align-items: center;
 
     flex-wrap: wrap-reverse;
-    & > *{
-      width: calc(50% - 30px);
-    }
+
     p, h4, h3{
       margin: 15px;
       text-align: center;
     }
   }
+  #event {
 
-  .outro-sentence{
+    flex-direction: row; 
+    #event-img{
+      width: calc(50% - 30px);
+    }
+    div{
+      width: calc(50% - 30px);
+    }
+  }
+  #access {
+
+    flex-direction: column; 
+
+    align-items: center;
+    justify-content: center;
+    & > *{
+      margin: 20px 0;
+    }
+
+    #access-map {
+      filter: hue-rotate(140deg) saturate(160%);
+      -webkit-filter: hue-rotate(140deg) saturate(160%);
+    }
+  }
+
+  .outro-sentence, #intro-sentence {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -160,7 +191,7 @@ section {
     font-size: 1.58rem;
   }
   & > .intro:nth-child(1){
-    margin-top: 70px;
+    margin-top: 0;
   }
   & > *:not(#players):not(.sub-title):not(.intro):not(.outro) {
     font-family: $title;

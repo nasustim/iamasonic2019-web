@@ -1,4 +1,12 @@
 const playersData = [{
+  id: 'motokiohkubo',   // motokiohkubo
+  name: '大久保雅基（おおくぼ もとき）',
+  description: '宮城県仙台市出身。テクノロジーと音楽の融合によって生まれる表現を模索している。名古屋芸術大学デザイン学部、愛知淑徳大学人間情報学部非常勤講師。洗足学園音楽大学 音楽・音響デザインコースを成績優秀者として卒業。情報科学芸術大学院大学[IAMAS]メディア表現研究科 修士課程修了。',
+  url: 'http://example.com',
+  imgFormat: '.jpg',
+  time: '18:20',
+  genre: 'computer music'
+},{
   id: 'nhayashi',
   name: '林暢彦（はやし のぶひこ）',
   description: '人間。音響作家・デザイナー。1992年愛知県生まれ。主な 仕事にコンピュータ音楽『SILENCE TRADE』シリーズ（自主制作CD-R）、清原惟監督映画『ひとつのバガテル』音響デザイン等。CCMC2019、TOKYO WONDER WALL 2016入選。',
@@ -23,14 +31,6 @@ const playersData = [{
   time: '17:55',
   genre: '環境音を使ったサウンド表現'
 },{
-  id: 'img2',   // motokiohkubo
-  name: '大久保雅基',
-  description: 'がんばります',
-  url: 'http://example.com',
-  imgFormat: '.jpg',
-  time: '18:20',
-  genre: 'computer music'
-},{
   id: 'skameda',   // skameda
   name: '亀田シゲル',
   description: '令和時代のペインティングってなんだろう',
@@ -38,14 +38,6 @@ const playersData = [{
   imgFormat: '.png',
   time: '18:50',
   genre: 'はじめての岐阜の夏'
-},{
-  id: 'thayashi',
-  name: 'takeshi HAYASHI',
-  description: '研究は、創った音を実態のある物理現象をして発生させる方法、Artubar System（音響管）。最近は、Lawrence English, Sarah Neufeld, William Basinsky に感動している。',
-  url: 'http://example.com',
-  imgFormat: '.png',
-  time: '19:05',
-  genre: 'プログレッシブ・インダストリアル・アンビエント少しプログロックなAmbient'
 },{
   id: 'pohapipope',
   name: 'ぽぱぴぽぺ',
@@ -57,6 +49,14 @@ const playersData = [{
   imgFormat: '.jpg',
   time: '19:35',
   genre: '合同バンド'
+},{
+  id: 'thayashi',
+  name: 'takeshi HAYASHI',
+  description: '研究は、創った音を実態のある物理現象をして発生させる方法、Artubar System（音響管）。最近は、Lawrence English, Sarah Neufeld, William Basinsky に感動している。',
+  url: 'http://example.com',
+  imgFormat: '.png',
+  time: '19:05',
+  genre: 'プログレッシブ・インダストリアル・アンビエント少しプログロックなAmbient'
 },{
   id: 'mrt_ry',
   name: 'mrt(ry',
@@ -92,8 +92,8 @@ const timetableData = [{
   time: '17:55',
   genre: '環境音を使ったサウンド表現'
 },{
-  id: 'img2',   // motokiohkubo
-  name: '大久保雅基',
+  id: 'motokiohkubo',   // motokiohkubo
+  name: '大久保雅基（おおくぼ もとき）',
   description: 'がんばります',
   url: 'http://example.com',
   imgFormat: '.jpg',
