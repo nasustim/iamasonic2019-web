@@ -137,6 +137,13 @@ section {
     text-align: center;
     font-size: 2rem;
   }
+  & > .intro {
+    font-family: $title;
+    text-align: center;
+    font-size: 1.8rem;
+
+    margin: 70px 0;
+  }
   & > *:not(#players):not(.sub-title) {
     font-family: $title;
     font-size: 1.5rem;

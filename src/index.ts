@@ -115,6 +115,16 @@ window.addEventListener('resize', function (event) {
 
 const controller = new ScrollMagic.Controller()
 
+const tween0 = TweenMax.fromTo('.easing-block0', 2, {opacity: 0, x: -120}, {ease: Power4.easeOut, opacity: 1, x: 0})
+const scene0 = new ScrollMagic.Scene({
+  triggerElement: '.easing-block0',
+  triggerHook: 'onEnter',
+  offset : 200,
+  reverse: false
+})
+  .setTween(tween0)
+  .addTo(controller);
+
 const tween1 = TweenMax.fromTo('.easing-block1', 2, {opacity: 0, x: -120}, {ease: Power4.easeOut, opacity: 1, x: 0})
 const scene1 = new ScrollMagic.Scene({
   triggerElement: '.easing-block1',
