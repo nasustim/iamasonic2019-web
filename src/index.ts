@@ -91,7 +91,7 @@ async function appendBackImgToCanvas (ctx: CanvasRenderingContext2D, imgPath: st
   return ctx
 }
 
-let resizeTimer
+/*let resizeTimer
 window.addEventListener('resize', function (event) {
   if (resizeTimer != null) {
     clearTimeout(resizeTimer);
@@ -105,7 +105,7 @@ window.addEventListener('resize', function (event) {
     //footerCtx = initCanvasForFooter(footerCanvas, footerBackgroundImg)
     //appendBackImgToCanvas(footerCtx, footerBackgroundImg, footerCanvas)
   }, 120)
-})
+})*/
 
 /**
  * easing animation
