@@ -4,10 +4,11 @@
   "description": "iamasonic 2019 summer 's webpage",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean && webpack --mode production && npm run copy-fonts && npm run copy-favicon",
+    "build": "npm run clean && webpack --mode production && npm run copy-fonts && npm run copy-favicon && npm run copy-ogp",
     "start": "webpack-dev-server",
     "clean": "rm -rf ./docs",
-    "copy-favicon": "cp -r src/favicon.ico docs/",
+    "copy-favicon": "cp -r src/favicon.ico docs/res/",
+    "copy-ogp": "cp -r src/res/ogp_img.png docs/res/",
     "copy-fonts": "cp -r src/fonts docs/",
     "test": "echo test"
   },

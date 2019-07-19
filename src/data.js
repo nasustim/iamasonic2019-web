@@ -9,7 +9,7 @@ const playersData = [{
 },{
   id: 'nhayashi',
   name: '林暢彦（はやし のぶひこ）',
-  description: '人間。音響作家・デザイナー。1992年愛知県生まれ。主な 仕事にコンピュータ音楽『SILENCE TRADE』シリーズ（自主制作CD-R）、清原惟監督映画『ひとつのバガテル』音響デザイン等。CCMC2019、TOKYO WONDER WALL 2016入選。',
+  description: '人間。音響作家・デザイナー。1992年愛知県生まれ。主な仕事にコンピュータ音楽『SILENCE TRADE』シリーズ（自主制作CD-R）、清原惟監督映画『ひとつのバガテル』音響デザイン等。CCMC2019、TOKYO WONDER WALL 2016入選。',
   url: 'http://example.com',
   imgFormat: '.jpg',
   time: '17:15',
