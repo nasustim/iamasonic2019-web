@@ -222,7 +222,7 @@ const setFooter = (): void =>{
   footerImg.src = footerBackgroundImg
   footerImg.onload = () => {
 
-    footer.setAttribute('style', `height: ${(GLOBAL_WIDTH / footerImg.width) * footerImg.height}px; width: 100vw;margin: 50px 0 0 0;padding: 0;position: relative;`)
+    footer.setAttribute('style', `height: ${(GLOBAL_WIDTH / footerImg.width) * footerImg.height}px; width: 100vw;margin: 0 0 0 0;padding: 0;position: relative;`)
     footerBack.setAttribute('style', `height: ${(GLOBAL_WIDTH / footerImg.width) * footerImg.height}px; background-image: url('res/footer_back.png'); background-size: contain; width: 100vw;position: absolute;left: 0;top: 0;`)
   }
   footerImg.onerror = (e) => {
