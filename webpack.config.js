@@ -12,7 +12,7 @@ module.exports = {
   mode,
   entry: './src/index.ts',
   output: {
-    path: `${__dirname}/docs`,
+    path: `${__dirname}/build`,
     filename: 'bundle.js'
   },
   module: {
@@ -84,7 +84,7 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: path.join(__dirname, 'docs'),
+    contentBase: path.join(__dirname, 'build'),
     host: '0.0.0.0',
     port: 8001
   }
